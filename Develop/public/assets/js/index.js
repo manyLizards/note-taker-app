@@ -3,8 +3,11 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+//defining the window
+const path = require('path');
 
-if (window.location.pathname === '/notes') {
+//defining the window
+if (base = path.basename("notes")) {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
