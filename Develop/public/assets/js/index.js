@@ -7,7 +7,8 @@ let noteList;
 const path = require('path');
 
 //defining the window
-if (base = path.basename("notes")) {
+if (path.basename("notes")) {
+  //define the document
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -168,7 +169,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
-  if (window.location.pathname === '/notes') {
+  if (path.basename === '/notes') {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
@@ -176,7 +177,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === '/notes') {
+if (path.basename === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
